@@ -4,68 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>修改密碼</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('/static/images/Test.jpeg') no-repeat center center fixed;
-            background-size: cover;
-        }
-        .change-password {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            text-align: left;
-            margin: 10px 0 5px;
-        }
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-        }
-        .alert {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-        }
-        .alert.success {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .alert.danger {
-            background-color: #f44336;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="change-password">
@@ -83,13 +22,13 @@
         <!-- 修改密碼表單 -->
         <form action="/change" method="POST">
             <label for="username">用戶名稱:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" placeholder="請輸入名稱" id="username" name="username" required>
             
             <label for="old_password">舊密碼:</label>
-            <input type="password" id="old_password" name="old_password" required>
+            <input type="password" placeholder="請輸入舊密碼" id="old_password" name="old_password" required>
 
             <label for="new_password">新密碼:</label>
-            <input type="password" id="new_password" name="new_password" required>
+            <input type="password" placeholder="請輸入新密碼" id="new_password" name="new_password" required>
             
             <input type="submit" value="修改密碼">
         </form>
